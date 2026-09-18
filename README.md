@@ -4,6 +4,13 @@
 
 **面向传统中医药的、数据质量优先的大语言模型。**
 
+## 训练与精炼流程 / Training and refinement workflow
+
+![TCMedSeek workflow](figures/fig1_workflow.png)
+
+**图 1** TCMedSeek 构建闭环：单段 LoRA SFT → 三档口径全量实测 → 闭集错题自动归因 → 分类补救 → 六通道去污闸回灌重训，共 33 轮迭代。
+**Fig. 1** The TCMedSeek construction loop: single-stage LoRA SFT, full-coverage evaluation under three scoring protocols, automated error attribution, class-matched remediation, and re-entry through the six-channel decontamination gate, for 33 iterations.
+
 ---
 
 ## 中文简介
@@ -32,24 +39,8 @@ TCMedSeek is a Traditional Chinese Medicine (TCM) domain LLM built on one premis
 | `figures/` | Figures 1–4 (300 DPI PNG) and the scripts that generate and validate them / 图 1–4 及生成与校验脚本 |
 | `supplementary/SupplMaterial.md` | Additional files 1–4 (iteration and remediation ledger; data construction logs; evaluation protocol deviations; baseline exclusions and training details) / 四个附文件整理稿 |
 | `source_materials/` | Chinese working documents that the manuscript was written from / 论文写作所依据的中文原始材料 |
-| `data_examples/` | Format documentation of the corpus and evaluation artifacts; real data are released with the paper / 数据格式说明（真实数据随论文发布） |
+| `data_examples/` | Format documentation of the corpus and evaluation artifacts / 数据格式说明 |
 
-## Data and artifacts release plan / 数据与产物发布计划
+## License / 许可
 
-The following artifacts are **not** in this repository because of size, and will be released upon publication (or on reasonable request):
-
-- Provenance-annotated training corpus (JSONL with per-sample provenance fields, ~180 MB)
-- Full evaluation artifacts: 13-model × 10-subset × 3-protocol matrices, per-item raw outputs and scores (~188 MB)
-- LoRA adapters and merged model (~67 GB)
-- Evaluation question lists with SHA-256 checksums, aggregation scripts
-
-以下产物因体积原因不在本仓库，将在论文发表时（或按合理请求）发布：逐条溯源标注版训练语料（约 180 MB）、13 模型 × 10 子集 × 3 口径评测矩阵与逐题原始输出（约 188 MB）、LoRA 权重与合并模型（约 67 GB）、题单 SHA-256 与汇总脚本。
-
-## Status / 状态
-
-Manuscript in preparation; target journal: *Chinese Medicine* (BMC / Springer Nature).
-论文撰写中；目标期刊 *Chinese Medicine*。
-
-Citation / 引用：[TODO after publication]
-
-Contact / 联系方式：[TODO]
+[TBD]
